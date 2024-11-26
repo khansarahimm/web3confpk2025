@@ -1,0 +1,729 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --purple-primary: #8B5CF6;
+    --pink-primary: #EC4899;
+    --bg-dark: #000000;
+    --text-light: #FFFFFF;
+    --text-gray: #9CA3AF;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* General Reset and Body Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Reset and Body Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    max-height: 60px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Navbar links and buttons */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8A4FFF;
+}
+
+/* Register Button */
+.register-btn {
+    background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.register-btn:hover {
+    opacity: 0.9;
+}
+
+.toggle-btn {
+    display: none; /* You might want to make it visible based on specific conditions */
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(142, 46, 186); /* Text color */
+    background: transparent; /* Make the background transparent */
+    border: none; /* Remove any default border */
+    padding: 10px; /* Adjust padding to ensure it has a proper clickable area */
+    border-radius: 50%; /* Round the toggle button */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for background and scaling */
+}
+
+.toggle-btn::before {
+    content: ''; /* Use a pseudo-element to create the gradient effect on the toggle */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(139, 92, 246, 1), rgba(67, 56, 255, 1)); /* Purple gradient */
+    border-radius: 50%; /* Ensure the gradient matches the rounded button */
+    opacity: 0; /* Start with no visible gradient */
+    transition: opacity 0.3s ease; /* Smooth transition for the gradient */
+}
+
+.toggle-btn:checked::before {
+    opacity: 1; /* Show the gradient when checked */
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1); /* Slight scaling effect on hover for interactivity */
+}
+
+
+/* Mobile Menu */
+.nav-links-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    position: absolute;
+    top: 70px; /* Adjust based on the height of your navbar */
+    left: 0;
+    right: 0;
+}
+
+.nav-links-mobile a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links-mobile a:hover {
+    color: #8A4FFF;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    /* Hide nav-links on small screens */
+    .nav-links {
+        display: none;
+    }
+
+    /* Show the hamburger button */
+    .toggle-btn {
+        display: none;
+    }
+
+    /* Hide Register Now button on small screens */
+    .register-link {
+        display: none;
+    }
+
+    /* Display the mobile menu when active */
+    .nav-links-mobile.active {
+        display: flex;
+    }
+}
+
+/* Hero section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1rem;
+    background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.2), transparent, transparent);
+}
+
+.hero-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.event-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--purple-primary);
+    border-radius: 9999px;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem; 
+}
+
+.hero h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.countdown-item {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.countdown-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Mobile-first styling for Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1rem; /* Reduce padding for smaller screens */
+        background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.3), transparent);
+    }
+
+    .hero-content {
+        max-width: 90%; /* Adjust the width for smaller screens */
+        margin: 0 auto; /* Center the content */
+        text-align: center; /* Keep text centered */
+    }
+
+   .event-badge {
+        font-size: 0.9rem; /* Slightly larger font for readability */
+        padding: 0.5rem 1rem; /* Balanced padding for better proportions */
+        margin-bottom: 1rem; /* Reduce spacing below */
+        margin-top: 1rem; /* Adjust spacing above */
+        background: linear-gradient(90deg, rgba(139, 92, 246, 0.3), rgba(139, 92, 246, 0.1)); /* Subtle gradient */
+        border: 1px solid rgba(139, 92, 246, 0.4); /* Add a soft border */
+        border-radius: 12px; /* Rounded corners for a smoother look */
+        text-align: center; /* Center-align text for better appearance */
+        color: var(--purple-primary); /* Maintain brand color */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Reduce headline size */
+        line-height: 1.2; /* Improve line spacing */
+        margin-bottom: 1rem; /* Adjust spacing */
+    }
+
+    .hero p {
+        color: var(--text-gray);
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .countdown {
+        grid-template-columns: repeat(2, 1fr); /* Show countdown items in two rows */
+        gap: 1rem; /* Add more space between items */
+        margin-bottom: 2rem; /* Space below the countdown */
+    }
+
+    .countdown-item {
+        padding: 1rem; /* Reduce padding for smaller cards */
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    .countdown-value {
+        font-size: 1.8rem; /* Adjust countdown number size */
+    }
+
+    .register-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px; /* Add rounded corners for mobile-friendly UI */
+        background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+        color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .register-btn:hover {
+        transform: translateY(-2px); /* Add a subtle hover effect */
+    }
+}
+
+
+/* Speakers section */
+.speakers-section {
+padding: 3rem 1rem;
+background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent);
+text-align: center;
+}
+
+.speakers-section h2 {
+font-size: 2rem;
+background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+margin-bottom: 2rem;
+}
+
+.speakers-list {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1rem;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.speaker-card {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 0.3rem; /* Reduced padding to make the card smaller */
+    border-radius: 8px;
+    color: var(--text-light);
+    width: 300px; /* Set a specific width */
+    height: auto; /* Adjusts height based on content, you can set a fixed height if you prefer */
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.speaker-card:hover {
+transform: translateY(-5px);
+}
+
+.speaker-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.25rem; /* Reduces the gap below the image */
+    margin-top: 1rem; /* Optional: Adds a gap above the image */
+    border: 8px linear-gradient(90deg, #8b5cf6, #ec4899); /* Adds a purple border */
+}
+
+
+.speaker-card h3 {
+font-size: 1.2rem;
+margin-top: 0.5rem;
+color: var(--purple-primary);
+}
+
+.speaker-card p {
+margin-top: 0.5rem;
+color: var(--text-gray);
+font-size: 0.75rem;
+margin-bottom: 2rem;
+line-height: 1.6;
+font-weight: lighter;
+margin-left: 1rem;
+margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+.speakers-list {
+grid-template-columns: repeat(1, 1fr);
+}
+}
+@media (max-width: 768px) {
+    .speakers-list {
+        display: flex; /* Change to flex for better alignment control */
+        flex-direction: column; /* Stack the cards vertically */
+        justify-content: center; /* Center the cards horizontally */
+        align-items: center; /* Center the cards vertically */
+    }
+
+    .speaker-card {
+        width: 100%; /* Make the cards take full width of the container */
+        max-width: 300px; /* Limit the maximum width for better appearance */
+    }
+}
+
+
+/* Get Involved Section */
+.get-involved {
+    background-color: #0b0d17;
+    color: #ffffff;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.get-involved .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.get-involved h3 {
+    font-size: 2rem;
+background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+margin-bottom: 1.5rem;
+}
+
+/* Text styling for the Get Involved section */
+.get-involved p {
+color: var(--text-gray);
+font-size: 1rem;
+margin-bottom: 2rem;
+line-height: 1.6;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .get-involved {
+        padding: 2rem 1rem; /* Reduced padding on mobile */
+        text-align: left; /* Left-align text on mobile */
+    }
+
+    .get-involved h3 {
+        font-size: 1.5rem; /* Smaller heading text */
+        margin-bottom: 1rem;
+    }
+
+    .get-involved p {
+        font-size: 1rem; /* Smaller paragraph text */
+        margin-bottom: 1.5rem;
+    }
+
+    .get-involved .container {
+        padding: 0 1rem; /* Ensure no excessive margin on small screens */
+    }
+}
+
+
+/* Cards Grid */
+.involvement-options {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Smaller min-width */
+gap: 1.5rem; /* Reduced spacing */
+}
+
+/* Individual Card */
+.involvement-card {
+background: rgba(139, 92, 246, 0.1);
+border: 1px solid rgba(139, 92, 246, 0.2);
+padding: 1.5rem; /* Reduced padding */
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+text-align: left;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.involvement-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.involvement-card h3 {
+font-size: 1.25rem; /* Slightly smaller */
+margin-bottom: 0.8rem;
+color: #ffffff;
+}
+
+.involvement-card p {
+font-size: 0.9rem; /* Reduced font size */
+margin-bottom: 1rem; /* Smaller spacing */
+color: #d1d5db;
+}
+
+/* Button */
+.btn {
+display: inline-block;
+background: linear-gradient(90deg, #8b5cf6, #ec4899);
+color: #ffffff;
+padding: 0.6rem 1rem; /* Reduced padding */
+font-size: 0.9rem; /* Smaller font */
+border: none;
+border-radius: 5px;
+text-decoration: none;
+transition: background 0.3s ease;
+}
+
+.btn:hover {
+background: linear-gradient(90deg, #ec4899, #8b5cf6);
+}
+
+
+/* Hack3 Section Styles */
+.hack3-section {
+padding: 3rem 1rem;
+background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent);
+text-align: center;
+}
+
+.hack3-container {
+max-width: 900px;
+margin: 0 auto;
+}
+
+.hack3-section h2 {
+font-size: 2rem;
+background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+margin-bottom: 1.5rem;
+}
+
+.hack3-section p {
+color: var(--text-gray);
+font-size: 1rem;
+margin-bottom: 2rem;
+line-height: 1.6;
+}
+
+.hack3-highlights {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1rem;
+margin-bottom: 2rem;
+}
+
+.hack3-card {
+background: rgba(139, 92, 246, 0.1);
+border: 1px solid rgba(139, 92, 246, 0.2);
+padding: 1rem;
+border-radius: 8px;
+color: var(--text-light);
+text-align: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+}
+
+.hack3-card:hover {
+transform: translateY(-5px);
+}
+
+.hack3-card h3 {
+font-size: 1.2rem;
+
+margin-bottom: 0.5rem;
+}
+
+.hack3-card p {
+font-size: 0.9rem;
+color: var(--text-gray);
+}
+
+@media (max-width: 768px) {
+.hack3-highlights {
+grid-template-columns: repeat(1, 1fr);
+}
+}
+
+
+/* Footer Styles */
+.footer {
+    background-color: #0b0d17;
+    color: #ffffff;
+    padding: 2rem 1rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+/* Footer Columns */
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    background-clip: text; /* Fallback for non-webkit browsers */
+    color: transparent; /* Makes the background gradient visible through text */
+}
+
+.footer-column p {
+    color: #d1d5db;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #d1d5db;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #8b5cf6;
+}
+
+/* Email Subscription */
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.subscribe-input {
+    padding: 0.8rem;
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    border-radius: 4px;
+    background-color: #161b29;
+    color: #d1d5db;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.subscribe-input::placeholder {
+    color: #9ca3af;
+}
+
+.subscribe-input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+}
+
+.subscribe-button {
+    padding: 0.8rem;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    border: none;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    max-width: 150px;
+}
+
+.subscribe-button:hover {
+    background: linear-gradient(90deg, #ec4899, #8b5cf6);
+}
+
+/* Social Icons */
+.footer-social {
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: left;
+    gap: 0.5rem;
+}
+
+.social-icons a {
+    font-size: 1rem;
+    color: #d1d5db;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ec4899;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 2rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.footer-bottom .gradient-text {
+    font-size: 0.75rem;
+    font-weight: bold;
+    background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    
+}
+.email-link {
+    color: white; /* Keep the text color white */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.875rem; /* Smaller font size */
+}
+
+.email-link:hover {
+    color: white; /* Ensure the text color remains white on hover */
+    text-decoration: none; /* Keep it consistent when hovered */
+}
