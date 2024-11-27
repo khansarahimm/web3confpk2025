@@ -397,7 +397,86 @@ grid-template-columns: repeat(1, 1fr);
     }
 }
 
-
+.minimal-agenda {
+    background-color: #0b0d17;
+    padding: 4rem 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .agenda-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .agenda-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .agenda-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .agenda-item {
+   display: flex;
+align-items: center;
+gap: 2rem;
+padding-bottom: 1rem;
+background: linear-gradient(to right, #8b5cf6, #ec4899);
+background-size: 100% 1px; /* Sets the gradient to be 2px high */
+background-position: bottom;
+background-repeat: no-repeat;
+transition: all 0.3s ease;
+  }
+  
+  .agenda-item:hover {
+    transform: translateX(10px);
+  }
+  
+  .agenda-item time {
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(to right, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    min-width: 80px;
+  }
+  
+  .item-details h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .item-details p {
+    font-size: 0.9rem;
+    color: #d1d5db;
+  }
+  
+  @media (max-width: 768px) {
+    .agenda-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .agenda-heading {
+      font-size: 2rem;
+    }
+    
+    .agenda-item time {
+      margin-bottom: 0.5rem;
+    }
+  }
 /* Get Involved Section */
 .get-involved {
     background-color: #0b0d17;
