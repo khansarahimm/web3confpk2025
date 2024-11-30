@@ -481,7 +481,7 @@ transition: all 0.3s ease;
     background-color: #000000; /* Changed background color to black */
     color: #ffffff;
     text-align: center;
-    padding: 15rem 1rem; /* Increased padding for more top and bottom space */
+    padding: 10rem 1rem; /* Increased padding for more top and bottom space */
 }
 
 .get-involved .container {
@@ -593,7 +593,7 @@ background: linear-gradient(90deg, #ec4899, #8b5cf6);
     color: #ffffff;
     padding: 2rem 1rem;
     font-family: Arial, sans-serif;
-     border-top: 1px solid #ffffff;
+     border-top: 0.4px solid #ffffff;
     
 }
 
