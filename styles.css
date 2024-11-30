@@ -477,12 +477,11 @@ transition: all 0.3s ease;
       margin-bottom: 0.5rem;
     }
   }
-/* Get Involved Section */
 .get-involved {
-    background-color: #000000;
+    background-color: #000000; /* Changed background color to black */
     color: #ffffff;
     text-align: center;
-    padding: 12rem 1rem;
+    padding: 15rem 1rem; /* Increased padding for more top and bottom space */
 }
 
 .get-involved .container {
@@ -492,25 +491,25 @@ transition: all 0.3s ease;
 
 .get-involved h3 {
     font-size: 2rem;
-background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-margin-bottom: 1.5rem;
+    background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1.5rem;
 }
 
 /* Text styling for the Get Involved section */
 .get-involved p {
-color: var(--text-gray);
-font-size: 1rem;
-margin-bottom: 2rem;
-line-height: 1.6;
+    color: var(--text-gray);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .get-involved {
-        padding: 2rem 1rem; /* Reduced padding on mobile */
+        padding: 3rem 1rem; /* Adjusted padding for mobile */
         text-align: left; /* Left-align text on mobile */
     }
 
@@ -528,6 +527,7 @@ line-height: 1.6;
         padding: 0 1rem; /* Ensure no excessive margin on small screens */
     }
 }
+
 
 
 /* Cards Grid */
