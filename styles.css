@@ -583,72 +583,8 @@ background: linear-gradient(90deg, #ec4899, #8b5cf6);
 }
 
 
-/* Hack3 Section Styles */
-.hack3-section {
-padding: 3rem 1rem;
-background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent);
-text-align: center;
-}
 
-.hack3-container {
-max-width: 900px;
-margin: 0 auto;
-}
 
-.hack3-section h2 {
-font-size: 2rem;
-background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-margin-bottom: 1.5rem;
-}
-
-.hack3-section p {
-color: var(--text-gray);
-font-size: 1rem;
-margin-bottom: 2rem;
-line-height: 1.6;
-}
-
-.hack3-highlights {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 1rem;
-margin-bottom: 2rem;
-}
-
-.hack3-card {
-background: rgba(139, 92, 246, 0.1);
-border: 1px solid rgba(139, 92, 246, 0.2);
-padding: 1rem;
-border-radius: 8px;
-color: var(--text-light);
-text-align: center;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease;
-}
-
-.hack3-card:hover {
-transform: translateY(-5px);
-}
-
-.hack3-card h3 {
-font-size: 1.2rem;
-
-margin-bottom: 0.5rem;
-}
-
-.hack3-card p {
-font-size: 0.9rem;
-color: var(--text-gray);
-}
-
-@media (max-width: 768px) {
-.hack3-highlights {
-grid-template-columns: repeat(1, 1fr);
-}
-}
 
 
 /* Footer Styles */
