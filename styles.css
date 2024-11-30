@@ -479,10 +479,10 @@ transition: all 0.3s ease;
   }
 /* Get Involved Section */
 .get-involved {
-    background-color: #0b0d17;
+    background-color: #00000;
     color: #ffffff;
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 8rem 1rem;
 }
 
 .get-involved .container {
