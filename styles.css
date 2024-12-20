@@ -400,15 +400,14 @@ grid-template-columns: repeat(1, 1fr);
 .minimal-agenda {
     background-color: #0b0d17;
     padding: 4rem 1rem;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .agenda-container {
-    max-width: 600px;
+}
+
+.agenda-container {
+    max-width: 800px;
     margin: 0 auto;
-  }
-  
-  .agenda-heading {
+}
+
+.agenda-heading {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
@@ -417,71 +416,89 @@ grid-template-columns: repeat(1, 1fr);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-  }
-  
-  .agenda-list {
+}
+
+.agenda-list {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-  }
-  
-  .agenda-item {
-   display: flex;
-align-items: center;
-gap: 2rem;
-padding-bottom: 1rem;
-background: linear-gradient(to right, #8b5cf6, #ec4899);
-background-size: 100% 1px; /* Sets the gradient to be 2px high */
-background-position: bottom;
-background-repeat: no-repeat;
-transition: all 0.3s ease;
-  }
-  
-  .agenda-item:hover {
+}
+
+.agenda-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 1rem;
+    background: linear-gradient(to right, #8b5cf6, #ec4899);
+    background-size: 100% 1px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease;
+}
+
+.agenda-item:hover {
     transform: translateX(10px);
-  }
-  
-  .agenda-item time {
-    font-size: 1rem;
+}
+
+.agenda-item time {
+    font-size: 0.9rem;
     font-weight: 600;
     background: linear-gradient(to right, #8b5cf6, #ec4899);
     -webkit-background-clip: text;
     background-clip: text;
-    min-width: 80px;
-  }
-  
-  .item-details h3 {
-    font-size: 1.25rem;
+    color: transparent;
+    min-width: 120px;
+}
+
+.item-details h3 {
+    font-size: 1.1rem;
     color: #ffffff;
     margin-bottom: 0.5rem;
     font-weight: 600;
-  }
-  
-  .item-details p {
+}
+
+.item-details p {
+    color: var(--text-gray);
     font-size: 0.9rem;
-    color: #d1d5db;
-  }
-  
-  @media (max-width: 768px) {
+    line-height: 1.6;
+}
+
+.track-badge {
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--purple-primary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .agenda-container {
+        padding: 0 10px;
+    }
+
     .agenda-item {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
     }
-    
+
     .agenda-heading {
-      font-size: 2rem;
+        font-size: 2rem;
     }
-    
+
     .agenda-item time {
-      margin-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
     }
-  }
+}
+/* Get Involved Section */
 .get-involved {
-    background-color: #000000; /* Changed background color to black */
+    background: radial-gradient( rgba(139, 92, 246, 0.3), transparent);
     color: #ffffff;
     text-align: center;
-    padding: 7rem 1rem; /* Increased padding for more top and bottom space */
+    padding: 10rem 1rem;
+    font-family: 2rem;
+
 }
 
 .get-involved .container {
@@ -490,36 +507,36 @@ transition: all 0.3s ease;
 }
 
 .get-involved h3 {
-    font-size: 2rem;
-    background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 1.5rem;
+font-size: 2rem;
+background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+margin-bottom: 1.5rem;
 }
 
 /* Text styling for the Get Involved section */
 .get-involved p {
-    color: var(--text-gray);
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+color: var(--text-gray);
+font-size: 0.9rem;
+margin-bottom: 2rem;
+line-height: 1.6;
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .get-involved {
-        padding: 3rem 1rem; /* Adjusted padding for mobile */
-        text-align: left; /* Left-align text on mobile */
+        padding: 2rem 1rem; /* Reduced padding on mobile */
+        /* Left-align text on mobile */
     }
 
     .get-involved h3 {
-        font-size: 1.5rem; /* Smaller heading text */
+        font-size: 2rem; /* Smaller heading text */
         margin-bottom: 1rem;
     }
 
     .get-involved p {
-        font-size: 1rem; /* Smaller paragraph text */
+        font-size: 0.9rem; 
         margin-bottom: 1.5rem;
     }
 
@@ -527,7 +544,6 @@ transition: all 0.3s ease;
         padding: 0 1rem; /* Ensure no excessive margin on small screens */
     }
 }
-
 
 
 /* Cards Grid */
@@ -560,9 +576,10 @@ color: #ffffff;
 }
 
 .involvement-card p {
-font-size: 0.9rem; /* Reduced font size */
-margin-bottom: 1rem; /* Smaller spacing */
-color: #d1d5db;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
 /* Button */
@@ -583,18 +600,12 @@ background: linear-gradient(90deg, #ec4899, #8b5cf6);
 }
 
 
-
-
-
-
 /* Footer Styles */
 .footer {
     background-color: #0b0d17;
     color: #ffffff;
     padding: 2rem 1rem;
     font-family: Arial, sans-serif;
-     border-top: 0.4px solid #ffffff;
-    
 }
 
 /* Footer Container */
@@ -715,6 +726,139 @@ background: linear-gradient(90deg, #ec4899, #8b5cf6);
 
 .social-icons a:hover {
     color: #ec4899;
+}
+
+
+.recent-events {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent);
+    padding: 4rem 1rem;
+    
+}
+
+.events-container {
+    max-width: 1400px;
+    min-height: 300px;
+    margin: 0 auto;
+}
+
+.recent-events h2 {
+    text-align: center;
+    font-size: 2rem;
+    background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2.5rem;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.event-card {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.1);
+}
+
+.event-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: white;
+}
+
+.event-tag.workshop {
+    background: rgba(139, 92, 246, 0.9);
+}
+
+.event-tag.networking {
+    background: rgba(236, 72, 153, 0.9);
+}
+
+.event-tag.exhibition {
+    background: rgba(52, 211, 153, 0.9);
+}
+
+.event-content {
+    padding: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-content h3 {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.location-badge {
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--purple-primary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    .recent-events {
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent);
+        padding: 4rem 1rem;
+        margin-top: 1.5rem;
+       }
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .event-card {
+        max-width: 100%;
+    }
+
+    .event-image {
+        height: 180px;
+    }
+
+    .recent-events {
+        padding: 3rem 1rem;
+    }
+
+    .recent-events h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
 /* Footer Bottom */
