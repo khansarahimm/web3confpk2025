@@ -1,5 +1,5 @@
 // Countdown Timer Logic
-const eventDate = new Date('January 18, 2025 09:00:00').getTime();
+const eventDate = new Date('January 19, 2025 09:00:00').getTime();
 
 // Update the countdown every second
 const countdownInterval = setInterval(function() {
