@@ -309,7 +309,6 @@ body {
     }
 }
 
-
 /* Speakers section */
 .speakers-section {
 padding: 3rem 1rem;
@@ -326,76 +325,108 @@ color: transparent;
 margin-bottom: 2rem;
 }
 
-.speakers-list {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 1rem;
-max-width: 900px;
-margin: 0 auto;
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 10px;
 }
 
 .speaker-card {
     background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    padding: 0.3rem; /* Reduced padding to make the card smaller */
-    border-radius: 8px;
-    color: var(--text-light);
-    width: 300px; /* Set a specific width */
-    height: auto; /* Adjusts height based on content, you can set a fixed height if you prefer */
-    transition: transform 0.3s ease;
+    border-radius: 10px;
+    padding: 15px;
     text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+    border: 1px solid #3a3a4e;
 }
 
 .speaker-card:hover {
-transform: translateY(-5px);
+    transform: translateY(-5px);
+    border-color: #9f7aea;
 }
 
-.speaker-img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+.speaker-image {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin-bottom: 0.25rem; /* Reduces the gap below the image */
-    margin-top: 1rem; /* Optional: Adds a gap above the image */
-    border: 8px linear-gradient(90deg, #8b5cf6, #ec4899); /* Adds a purple border */
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border: 2px solid #3a3a4e;
 }
 
-
-.speaker-card h3 {
-font-size: 1.2rem;
-margin-top: 0.5rem;
-color: var(--purple-primary);
+.speaker-card:hover .speaker-image {
+    border-color: #9f7aea;
 }
 
-.speaker-card p {
-margin-top: 0.5rem;
-color: var(--text-gray);
-font-size: 0.75rem;
-margin-bottom: 2rem;
-line-height: 1.6;
-font-weight: lighter;
-margin-left: 1rem;
-margin-right: 1rem;
+.speaker-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-@media (max-width: 768px) {
-.speakers-list {
-grid-template-columns: repeat(1, 1fr);
+.speaker-name {
+    color: #9f7aea;
+    font-size: 1.1rem;
+    margin: 0 0 8px 0;
+    font-weight: bold;
 }
+
+.speaker-title {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 3.6em;
 }
-@media (max-width: 768px) {
-    .speakers-list {
-        display: flex; /* Change to flex for better alignment control */
-        flex-direction: column; /* Stack the cards vertically */
-        justify-content: center; /* Center the cards horizontally */
-        align-items: center; /* Center the cards vertically */
+
+/* Large screens (laptops and desktops) */
+@media (max-width: 1400px) {
+    .speakers-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
     }
+}
 
-    .speaker-card {
-        width: 100%; /* Make the cards take full width of the container */
-        max-width: 300px; /* Limit the maximum width for better appearance */
+/* Tablets */
+@media (max-width: 1024px) {
+    .speakers-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Large phones */
+@media (max-width: 768px) {
+    .speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .speaker-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .speaker-name {
+        font-size: 1rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .speakers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .speaker-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 
 .minimal-agenda {
     background-color: #0b0d17;
