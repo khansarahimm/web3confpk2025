@@ -450,13 +450,15 @@ margin-bottom: 2rem;
         height: 120px;
     }
 }
-.timelineTitle {
-  font-size: 2rem;
-background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-margin-bottom: 2rem;
+.timeline h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--purple-primary), var(--pink-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 3rem;
 }
 
 
