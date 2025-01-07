@@ -68,6 +68,9 @@ body {
     width: auto;
     object-fit: contain;
 }
+header .mobile-info {
+    display: none; /* Hide mobile info by default */
+  }
 
 /* Navbar links and buttons */
 .nav-links {
@@ -160,6 +163,19 @@ body {
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
+
+    header .logo,
+  header .hamburger {
+    display: none; /* Hide logo and hamburger on mobile */
+  }
+
+  header .mobile-info {
+    display: block; /* Show mobile info on mobile */
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+  }
     /* Hide nav-links on small screens */
     .nav-links {
         display: none;
@@ -169,9 +185,13 @@ body {
     .toggle-btn {
         display: none;
     }
+   
 
     /* Hide Register Now button on small screens */
     .register-link {
+        display: none;
+    }
+    .logo{
         display: none;
     }
 
@@ -309,6 +329,7 @@ body {
     }
 }
 
+
 /* Speakers section */
 .speakers-section {
 padding: 3rem 1rem;
@@ -343,7 +364,8 @@ margin-bottom: 2rem;
 
 .speaker-card:hover {
     transform: translateY(-5px);
-    border-color: #9f7aea;
+    border-color: #EC4899;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 }
 
 .speaker-image {
@@ -356,7 +378,9 @@ margin-bottom: 2rem;
 }
 
 .speaker-card:hover .speaker-image {
-    border-color: #9f7aea;
+    transform: translateY(-5px);
+    border-color: #EC4899;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 }
 
 .speaker-image img {
@@ -427,99 +451,116 @@ margin-bottom: 2rem;
     }
 }
 
-
-.minimal-agenda {
-    background-color: #0b0d17;
-    padding: 4rem 1rem;
-}
-
-.agenda-container {
-    max-width: 800px;
+.timeline {
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 4rem 1rem;
+    font-family: 'Arial', sans-serif;
+    
 }
 
-.agenda-heading {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    font-weight: 700;
-    background: linear-gradient(to right, #8b5cf6, #ec4899);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.agenda-list {
+.timeline-item {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
 }
 
-.agenda-item {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding-bottom: 1rem;
-    background: linear-gradient(to right, #8b5cf6, #ec4899);
-    background-size: 100% 1px;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    transition: all 0.3s ease;
-}
-
-.agenda-item:hover {
-    transform: translateX(10px);
-}
-
-.agenda-item time {
-    font-size: 0.9rem;
-    font-weight: 600;
-    background: linear-gradient(to right, #8b5cf6, #ec4899);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    min-width: 120px;
-}
-
-.item-details h3 {
-    font-size: 1.1rem;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.item-details p {
-    color: var(--text-gray);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.track-badge {
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 120px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
     background: rgba(139, 92, 246, 0.2);
-    color: var(--purple-primary);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    margin-left: 0.5rem;
 }
 
-@media (max-width: 768px) {
-    .agenda-container {
-        padding: 0 10px;
-    }
+.time {
+    width: 120px;
+    padding-right: 20px;
+    font-size: 14px;
+    color: #8B5CF6;
+    font-weight: 500;
+    flex-shrink: 0;
+}
 
-    .agenda-item {
+.content {
+    flex-grow: 1;
+    padding: 15px 20px;
+    margin-left: 20px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-5px);
+    border-color: #EC4899;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 5px 0;
+}
+
+.speaker {
+    font-size: 14px;
+    color: #9CA3AF;
+    margin: 0;
+}
+
+.workshop {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .timeline-item {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
     }
-
-    .agenda-heading {
-        font-size: 2rem;
+    
+    .timeline-item::before {
+        left: 10px;
     }
-
-    .agenda-item time {
-        margin-bottom: 0.5rem;
+    
+    .time {
+        width: 100%;
+        padding-bottom: 10px;
+        padding-left: 30px;
+    }
+    
+    .content {
+        margin-left: 30px;
     }
 }
 /* Get Involved Section */
@@ -598,6 +639,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 .involvement-card:hover {
 transform: translateY(-5px);
 box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+border-color: #EC4899;
 }
 
 .involvement-card h3 {
@@ -828,7 +870,7 @@ background: linear-gradient(90deg, #ec4899, #8b5cf6);
     color: white;
 }
 
-.event-tag.hackathon {
+.event-tag.workshop {
     background: rgba(139, 92, 246, 0.9);
 }
 
@@ -973,8 +1015,8 @@ background: linear-gradient(90deg, #ec4899, #8b5cf6);
     border: 1px solid rgba(139, 92, 246, 0.2);
     border-radius: 8px;
     padding: 1rem;
-    width: 180px; 
-    height: 140px; 
+    width: 180px; /* Fixed width for desktop */
+    height: 140px; /* Fixed height for desktop */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -983,7 +1025,8 @@ background: linear-gradient(90deg, #ec4899, #8b5cf6);
 
 .partner-logo:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+    border-color: #EC4899;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 }
 
 .partner-logo img {
